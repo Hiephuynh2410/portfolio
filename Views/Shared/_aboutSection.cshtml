@@ -1,0 +1,37 @@
+﻿<section class="section pt-0" id="about">
+    <div class="container text-center">
+        <div class="about">
+            <div class="about-img-holder">
+                <img src="~/assets/imgs/user.png" class="about-img shake-on-hover" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
+            </div>
+            <div class="about-caption">
+                <p class="section-subtitle">Who Am I ?</p>
+                <h2 class="section-title mb-3">About Me</h2>
+                <p class="text-justify">
+                    I am now a four-year student at Hutech University who is constantly keen to study new things
+                    and enhance my abilities. I am familiar with front-end technologies such as HTML, CSS, and
+                    JavaScript, as well as back-end technologies such as MVC and RESTFul API. I also have a
+                    rudimentary knowledge of GitHub and Postman
+                </p>
+                <button class="btn-rounded btn btn-outline-primary mt-4" onclick="downloadCV()">Download CV</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function downloadCV() {
+        var downloadUrl = '@Url.Action("DownloadCV", "Home")';
+
+        var anchorElement = document.createElement('a');
+        anchorElement.href = downloadUrl;
+        anchorElement.target = '_blank'; 
+        anchorElement.download = 'CV.pdf'; 
+
+        document.body.appendChild(anchorElement);
+
+        anchorElement.click();
+
+        document.body.removeChild(anchorElement);
+    }
+</script>

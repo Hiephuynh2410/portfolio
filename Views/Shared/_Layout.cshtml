@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with Meyawo landing page.">
+    <meta name="author" content="Devcrud">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="~/assets/vendors/themify-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="~/assets/css/meyawo.css">
+
+    <link rel="stylesheet" href="~/assets/css/hover.css">
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+    @RenderBody()
+    <partial name="_customNavbar" />
+
+    <!-- page header -->
+    <partial name="_Home" />
+
+    <!-- about section -->
+    <partial name="_aboutSection" />
+
+    <!-- services section -->
+    <partial name="_serviceSection" />
+
+    <partial name="_certificate" />
+
+    <partial name="_blogPost" />
+
+    <partial name="_contact" />
+
+    <partial name="_container" />
+
+
+
+    <script src="~/assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="~/assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+
+    <!-- bootstrap 3 affix -->
+    <script src="~/assets/vendors/bootstrap/bootstrap.affix.js"></script>
+
+    <!-- Meyawo js -->
+    <script src="~/assets/js/meyawo.js"></script>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
