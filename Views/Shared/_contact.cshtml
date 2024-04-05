@@ -2,19 +2,26 @@
     <div class="container text-center">
         <p class="section-subtitle">How can you communicate?</p>
         <h6 class="section-title mb-5">Contact Me</h6>
-        <form action="" class="contact-form col-md-10 col-lg-8 m-auto">
+        <form action="" style="display:flex; flex-wrap:wrap" class="contact-form col-md-10 col-lg-8 m-auto">
             <div class="form-row">
                 <div class="form-group col-sm-6">
-                    <input type="text" size="50" id="nameField" class="form-control" value="Huỳnh Văn Hiệp" readonly>
+                    <div class="wrapper" style="display: flex; border: 1px solid #ccc;  border-radius: 5px;">
+                        <input style="background-color: transparent; border: none;" type="text" id="namelField" class="form-control" value="Huỳnh Văn Hiệp" readonly>
+                        <img style="height: 21px; margin: auto 0.5rem; cursor:pointer" src="~/assets/imgs/copy.png" onclick="copyName()" alt="Alternate Text" />
+                    </div>
                 </div>
                 <div class="form-group col-sm-6">
-                    <input type="email" id="emailField" class="form-control" value="huynhhiepvan1998@gmail.com" readonly>
-                    <button type="button" onclick="copyEmail()">Copy</button>
+                    <div class="wrapper" style="display: flex; border: 1px solid #ccc;  border-radius: 5px;">
+                        <input style="background-color: transparent; border: none;" type="email" id="emailField" class="form-control" value="huynhhiepvan1998@gmail.com" readonly>
+                        <img  style="height: 21px; margin: auto 0.5rem; cursor:pointer" src="~/assets/imgs/copy.png" onclick="copyEmail()" alt="Alternate Text" />
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <div class="wrapper" style="display: flex; border: 1px solid #ccc;  border-radius: 5px;">
+                        <input style="background-color: transparent; border: none;" type="tel" id="phoneField" class="form-control" value="0767537243" readonly>
+                        <img style="height: 21px; margin: auto 0.5rem; cursor:pointer" src="~/assets/imgs/copy.png" onclick="copyPhone()" alt="Alternate Text" />
+                    </div>
 
-                </div>
-                <div class="form-group col-sm-6">
-                    <input type="tel" id="phoneField" class="form-control" value="0767537243" readonly>
-                    <button type="button" onclick="copyPhone()">Copy</button>
                 </div>
             </div>
         </form>
@@ -32,10 +39,22 @@
             alert("Failed to copy!");
         });
     }
+
     function copyPhone() {
         var phone = document.getElementById("phoneField").value;
 
         var copyText = phone
+        navigator.clipboard.writeText(copyText).then(function () {
+            alert("copy success!");
+        }, function () {
+            alert("Failed to copy!");
+        });
+    }
+
+    function copyName() {
+        var name = document.getElementById("namelField").value;
+
+        var copyText = name
         navigator.clipboard.writeText(copyText).then(function () {
             alert("copy success!");
         }, function () {
